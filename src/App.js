@@ -1,3 +1,5 @@
+import { initializeApp } from "firebase/app";
+import { getAnalytics } from "firebase/analytics";
 // routes
 import Router from './routes';
 // theme
@@ -9,9 +11,6 @@ import ScrollToTop from './components/ScrollToTop';
 import { ProgressBarStyle } from './components/ProgressBar';
 import NotistackProvider from './components/NotistackProvider';
 import MotionLazyContainer from './components/animate/MotionLazyContainer';
-
-import { initializeApp } from "firebase/app";
-import { getAnalytics } from "firebase/analytics";
 
 const firebaseConfig = {
   apiKey: "AIzaSyB2wkrWNH-sW6fVhCIfnUgenztkyOEF_gM",
@@ -29,7 +28,7 @@ export default function App() {
 
   const app = initializeApp(firebaseConfig);
   const analytics = getAnalytics(app);
-  
+
   return (
     <MotionLazyContainer>
       <ThemeProvider>
