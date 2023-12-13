@@ -1,0 +1,6 @@
+@font-face {
+  font-family: 'ReservationWideRegular';
+  font-weight: 500;
+  font-style: normal;
+  src: local('ReservationWideRegular'), url('Reservation-Wide-Regular.ttf') format('truetype');
+}
