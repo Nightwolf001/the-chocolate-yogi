@@ -20,6 +20,7 @@ const RootStyle = styled('div')(({ theme }) => ({
 
 export default function HomeAdvertisement() {
   const theme = useTheme();
+  
   return (
   <RootStyle>
     <Container component={MotionViewport}>
