@@ -15,7 +15,7 @@ MotionViewport.propTypes = {
 };
 
 export default function MotionViewport({ children, disableAnimatedMobile = true, ...other }) {
-  const isDesktop = useResponsive('up', 'sm');
+  const isDesktop = useResponsive('up', 'md');
 
   if (!isDesktop && disableAnimatedMobile) {
     return <Box {...other}>{children}</Box>;

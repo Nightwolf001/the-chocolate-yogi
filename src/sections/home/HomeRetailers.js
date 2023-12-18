@@ -9,12 +9,11 @@ import { MotionViewport, varFade } from '../../components/animate';
 // ----------------------------------------------------------------------
 
 const RootStyle = styled('div')(({ theme }) => ({
-  paddingTop: theme.spacing(24),
-  backgroundColor: theme.palette.design.onPrimary,
+  paddingTop: theme.spacing(20),
+  backgroundColor: theme.palette.design.default,
   position: 'relative',
   zIndex: 12,
   [theme.breakpoints.up('md')]: {
-    paddingBottom: theme.spacing(.5),
   },
 }));
 
@@ -27,23 +26,21 @@ const Ellipse = styled('div')(({ theme }) => ({
   right:0,
   left:0,
   bottom: "-100px",
-  backgroundColor: theme.palette.design.onPrimary,
+  backgroundColor: theme.palette.design.def,
   boxShadow: "0px 10px 10px 0px rgba(0, 0, 0, 0.1)"
 }));
 
 // ----------------------------------------------------------------------
 
-export default function HomeRetailers() {
-  const theme = useTheme();
-
-  const isLight = theme.palette.mode === 'light';
+export default function HomeRetailers({ selectedTheme }) {
+  if (selectedTheme === null) return null;
   
   return (
     <RootStyle>
       <Container sx={{zIndex: 10}} component={MotionViewport}>
         <Box sx={{ textAlign: 'center', mb: { xs: 10, md: 5 }}}>
           <m.div variants={varFade().inDown}>
-            <Typography color={theme.palette.design.darkTertiary} variant="h3">
+            <Typography color={selectedTheme.palette.default} variant="h3">
               Available at these retailers
             </Typography>
           </m.div>
@@ -66,7 +63,7 @@ export default function HomeRetailers() {
         </Grid>
            
       </Container>
-      <Ellipse/>
+      {/* <Ellipse/> */}
     </RootStyle>
   );
 }

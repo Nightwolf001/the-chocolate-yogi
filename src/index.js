@@ -38,6 +38,7 @@ import LocalizationProvider from '@mui/lab/LocalizationProvider';
 import { store, persistor } from './redux/store';
 // contexts
 import { SettingsProvider } from './contexts/SettingsContext';
+import { ThemeProvider } from './contexts/ThemeContext';
 import { CollapseDrawerProvider } from './contexts/CollapseDrawerContext';
 
 // Check our docs
@@ -61,13 +62,15 @@ ReactDOM.render(
       <ReduxProvider store={store}>
         <PersistGate loading={null} persistor={persistor}>
           <LocalizationProvider dateAdapter={AdapterDateFns}>
-            <SettingsProvider>
-              <CollapseDrawerProvider>
-                <BrowserRouter>
-                  <App />
-                </BrowserRouter>
-              </CollapseDrawerProvider>
-            </SettingsProvider>
+              <SettingsProvider>
+                <CollapseDrawerProvider>
+                <ThemeProvider>
+                  <BrowserRouter>
+                    <App />
+                  </BrowserRouter>
+                </ThemeProvider>
+                </CollapseDrawerProvider>
+              </SettingsProvider>
           </LocalizationProvider>
         </PersistGate>
       </ReduxProvider>

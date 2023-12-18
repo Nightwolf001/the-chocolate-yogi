@@ -6,55 +6,51 @@ import { Box, Card, Container, Typography } from '@mui/material';
 import Image from '../../components/Image';
 import { MotionViewport, varFade } from '../../components/animate';
 
-// ----------------------------------------------------------------------
+export default function HomeBrandStatement3({ selectedTheme }) {
 
-const RootStyle = styled('div')(({ theme }) => ({
-  paddingTop: theme.spacing(23),
-  backgroundColor: theme.palette.design.secondary,
-  position: 'relative',
-  zIndex: 13,
-  [theme.breakpoints.up('md')]: {
-    paddingBottom: theme.spacing(.5),
-  },
-}));
+  if (selectedTheme === null) return null;
+  const RootStyle = styled('div')(({ theme }) => ({
+    paddingTop: theme.spacing(24),
+    backgroundColor: selectedTheme.palette.secondary,
+    position: 'relative',
+    zIndex: 13,
+    [theme.breakpoints.up('md')]: {
+      paddingBottom: theme.spacing(.5),
+    },
+  }));
 
-const Ellipse = styled('div')(({ theme }) => ({
-  position: 'absolute',
-  zIndex: -1,
-  borderRadius: '50%',
-  width: '100%',
-  height: "200px",
-  right:0,
-  left:0,
-  bottom: "-100px",
-  backgroundColor: theme.palette.design.secondary,
-  boxShadow: "0px 10px 10px 0px rgba(0, 0, 0, 0.1)"
-}));
-
-// ----------------------------------------------------------------------
-
-export default function HomeBrandStatement3() {
-  const theme = useTheme();
-
-  const isLight = theme.palette.mode === 'light';
+  const Ellipse = styled('div')(({ theme }) => ({
+    position: 'absolute',
+    zIndex: -1,
+    borderRadius: '50%',
+    width: '100%',
+    height: "200px",
+    right: 0,
+    left: 0,
+    bottom: "-100px",
+    backgroundColor: selectedTheme.palette.secondary,
+    boxShadow: "0px 10px 10px 0px rgba(0, 0, 0, 0.1)"
+  }));
   
   return (
+    <pre style={{ textWrap: 'pretty' }}>
     <RootStyle>
       <Container sx={{zIndex: 10}} component={MotionViewport}>
         <Box sx={{ textAlign: 'center', mb: { xs: 10, md: 5 }}}>
           <m.div variants={varFade().inDown}>
-            <Typography color={theme.palette.design.contrastText} variant="h3">
-              Organic & Raw Ingredients
+            <Typography color={selectedTheme.palette.contrastText} variant="h3">
+                {selectedTheme.prop_3.title}
             </Typography>
           </m.div>
         </Box>
         <Box sx={{ textAlign: 'center' }}>
           <m.div variants={varFade().inUp}>
-            <Typography color={theme.palette.design.contrastText} sx={{ mb: 2 }} variant="body1">Using organic and raw ingredients where possible, and thoughtfully sourced, we aim to produce chocolates that are wonderfully good.</Typography>
+              <Typography color={selectedTheme.palette.contrastText} sx={{ mb: 2 }} variant="body1">{selectedTheme.prop_3.body}</Typography>
           </m.div>
         </Box>
       </Container>
       <Ellipse/>
     </RootStyle>
+    </pre>
   );
 }

@@ -19,6 +19,30 @@ const DESIGN = {
   quaternary: '#B1D9CC',
   quinary: '#0F1111',
 };
+const COOKIE = {
+  main: '#F47C63',
+  secondary: '#A0A1C5',
+  textPrimary: '#EAE4D0',
+  onPrimary: '#EAE4D0',
+  textSecondary: '#184775',
+  darkSecondary: '#5E68A1',
+  tertiary: '#B16973',
+  darkTertiary: '#974160',
+  quaternary: '#B1D9CC',
+  quinary: '#0F1111',
+};
+const PEPPERMINT = {
+  main: '#AACC3F',
+  secondary: '#5E68A0',
+  textPrimary: '#8C88B2',
+  onPrimary: '#EAE4D0',
+  textSecondary: '#184775',
+  darkSecondary: '#8C88B2',
+  tertiary: '#668D6D',
+  darkTertiary: '#5F7267',
+  quaternary: '#E77A34',
+  quinary: '#617267',
+};
 const CHOCOLATE = {
   peppermint: '#668D6D',
   caramel: '#5D3A57',
@@ -111,6 +135,8 @@ const CHART_COLORS = {
 const COMMON = {
   chocolate: { ...CHOCOLATE, contrastText: '#EAE4D0'},
   design: { ...DESIGN, contrastText: '#EAE4D0' },
+  cookie: { ...COOKIE, contrastText: '#EAE4D0' },
+  peppermint: { ...PEPPERMINT, contrastText: '#EAE4D0' },
   common: { black: '#000', white: '#fff' },
   primary: { ...PRIMARY, contrastText: '#fff' },
   secondary: { ...SECONDARY, contrastText: '#fff' },
